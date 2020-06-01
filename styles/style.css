@@ -1,61 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-</head>
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
-<body>
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
 
-<h1 class="title"> WholeFoods</h1>
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
 
-<!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
-    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-    <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
-</div>
+button {
+    font-size: 30px;
+}
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent">
-    <h3>Client Information</h3>
-    <p>Tell us a bit about you.</p>
-    Choose a Category:
-    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-        <option value=""></option>
-        <option value="Vegetarian">Vegetarian</option>
-        <option value="GlutenFree">GlutenFree</option>
-        <option value="None">None</option>
-    </select><br>
-    Choose a Category:
-    <select id="dietSelectOrganic" name="dietSelectOrganic" onchange="populateListProductChoices(this.id, 'displayProduct')">
-        <option value=""></option>
-        <option value="Organic">Organic</option>
-        <option value="Not Organic">Not Organic</option>
-    </select>
-</div>
+div{
+    font-size: 25px;
+}
 
-<div id="Products" class="tabcontent">
-    <h3>Your targeted products</h3>
-    <p>We preselected products based on your restrictions.</p>
-    Choose items to buy:
-    <div id="displayProduct"></div>
-    <button id="addCart" type="button" class="block" onclick="selectedItems()">
-        Add selected items to cart.
-    </button>
-</div>
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
 
-<div id="Cart" class="tabcontent">
-    <h3>Cart</h3>
-    <p>Here is your cart.</p>
-    <div id="displayCart"></div>
-</div>
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
 
-<p class="signature">Website Created by Stephanie Jazzar</p>
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
 
+body{
+    background-color: lightblue;
+}
 
-<script src="scripts/groceries.js"></script>
-<script src="scripts/main.js"></script>
+.title{
+    font-family: cursive;
+    font-size: 50px;
+    text-align: center;
+}
 
-</body>
-</html>
+.signature{
+    text-align: end;
+    font-size: 17px;
+    font-family: cursive;
+    position:absolute;
+    bottom:0;
+    right:1cm;
+}
+
